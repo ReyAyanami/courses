@@ -1,5 +1,5 @@
-const studentList = require('./crud/student.js')
-const teacherList = require('./crud/teacher.js')
+const studentList = require('./crud/students.js')
+const teacherList = require('./crud/teachers.js')
 const {
   listOfStudents,
   listOfTeachers,
@@ -12,6 +12,10 @@ listOfStudents.forEach(
 listOfTeachers.forEach(
   teacher => teacherList.create(teacher)
 )
+
+const student = studentList.find('princess1@mail.ru')
+student.age = '2020'
+console.log(student.age);
 
 /*const {
   listOfStudents,

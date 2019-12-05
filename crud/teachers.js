@@ -3,7 +3,7 @@
 const List = require('./list.js')
 const Person = require('../person.js')
 
-class Teacher extends Staff {
+class Teacher extends Person {
   constructor(pvtInfo) {
     super(pvtInfo)
     this.subject = pvtInfo.subject;

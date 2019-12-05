@@ -9,7 +9,13 @@ class Student extends Person {
     this.birthday = pvtInfo.birthday;
   }
 
-  get studentsAge() {
+  set age(value) {
+    if(+value < new Date().getFullYear()) {
+      this.birthday = value
+    }
+  }
+
+  get age() {
     return new Date().getFullYear() - this.birthday.slice(-4);
   }
 }
@@ -19,5 +25,7 @@ class StudentList extends List {
     this.add(new Student(object))
   }
 }
+
+const studentList = new StudentList()
 
 module.exports = studentList
